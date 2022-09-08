@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+</head>
+<body>
+
+	<nav class="navbar">
+		<div class="navbar__container">
+			<a href="#home" id="navbar__logo">Musiz</a>
+
+			<div class="navbar__toggle" id="mobile-menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+
+			<ul class="navbar__menu">
+				<li class="navbar__item">
+					<a href="{% url 'index' %}" class="navbar__links" id="home-page">Home</a>
+				</li>
+				<li class="navbar__item">
+					<a href="{% url 'about' %}" class="navbar__links" id="about-page">About</a>
+				</li>
+				<li class="navbar__item">
+					<a href="{% url 'freestyle_index' %}" class="navbar__links" id="services-page">Freestyle</a>
+				</li>
+				<li class="navbar__btn">
+					<a href="{% url 'upload_vid' %}" class="button" id="signup">Upload</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="about_section">
+		<div class="container">
+			<div class="left">
+				<img src="{% static 'imgs/kid_buu.jpg' %}" class="img">
+			</div>
+			<div class="right">
+				<h2>About <span>Us</span></h2>
+
+				<p>Welcome to this website. This is all about freestyling and allowing you as the user to test your skills. We have a motto, why only listen to music when you can try it out yourself. Here you can upload videos of yourself freestyling or even videos of other people who you think are cool. You can go to our freestyle mode and test your skills with our 3 word freestyle mode, where you get 3 random words to freestyle and take a video of yourself and upload it.</p>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		this is the footer 4 now again
+	</footer>
+
+	<script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
+</body>
+</html>

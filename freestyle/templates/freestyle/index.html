@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/freestyle_index.css' %}">
+</head>
+<body>
+	
+	<nav class="navbar">
+		<div class="navbar__container">
+			<a href="#home" id="navbar__logo">Musiz</a>
+
+			<div class="navbar__toggle" id="mobile-menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+
+			<ul class="navbar__menu">
+				<li class="navbar__item">
+					<a href="{% url 'index' %}" class="navbar__links" id="home-page">Home</a>
+				</li>
+				<li class="navbar__item">
+					<a href="{% url 'about' %}" class="navbar__links" id="about-page">About</a>
+				</li>
+				<li class="navbar__item">
+					<a href="{% url 'freestyle_index' %}" class="navbar__links" id="services-page">Freestyle</a>
+				</li>
+				<li class="navbar__btn">
+					<a href="{% url 'freestyle_upload' %}" class="button" id="signup">Upload</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="main_container">
+		<div class="container">
+			<div class="left">
+				<button id="btn">Click here to get new words</button>
+				<div class="output" id="output">Press the button to generate 3 random words</div>
+			</div>
+			<div class="right">
+				<div class="custom">
+					<h3>Have a song in mind, upload is here</h3>
+					<a href="{% url 'freestyle_upload' %}">This link will to u to upload page</a>
+				</div>
+				<div class="built_in">
+					<h3>Don't have 1, use our free freestyle songs</h3>
+					{% for x in songs %}
+						<audio controls class="song">
+							<source src="{{x.song.url}}" type="audio/mpeg">
+						</audio>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		This is the footer
+	</footer>
+
+	<script type="text/javascript" src="{% static 'js/freestyle.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
+</body>
+</html>
